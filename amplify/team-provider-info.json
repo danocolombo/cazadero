@@ -1,0 +1,38 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cazadero-staging-25804-authRole",
+      "UnauthRoleArn": "arn:aws:iam::226036691416:role/amplify-cazadero-staging-25804-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::226036691416:role/amplify-cazadero-staging-25804-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cazadero-staging-25804-deployment",
+      "UnauthRoleName": "amplify-cazadero-staging-25804-unauthRole",
+      "StackName": "amplify-cazadero-staging-25804",
+      "StackId": "arn:aws:cloudformation:us-east-1:226036691416:stack/amplify-cazadero-staging-25804/cfa5f1c0-705a-11ed-813c-1290a6ed1983",
+      "AmplifyAppId": "d1xj7tfqdu1c7m"
+    },
+    "categories": {
+      "auth": {
+        "cazadero": {
+          "userPoolId": "us-east-1_LecNXt66q",
+          "userPoolName": "Meeter",
+          "webClientId": "3tn2h8s0mv2d342i1ovkr6qrd5",
+          "nativeClientId": "3tn2h8s0mv2d342i1ovkr6qrd5",
+          "identityPoolId": "us-east-1:5568f877-2766-4ea3-a9a6-442df0d29980",
+          "identityPoolName": "Meeter",
+          "allowUnauthenticatedIdentities": true,
+          "authRoleArn": "arn:aws:iam::226036691416:role/Cognito_MeeterAuth_Role",
+          "authRoleName": "Cognito_MeeterAuth_Role",
+          "unauthRoleArn": "arn:aws:iam::226036691416:role/Cognito_MeeterUnauth_Role",
+          "unauthRoleName": "Cognito_MeeterUnauth_Role"
+        }
+      },
+      "storage": {
+        "s3cazaderosolutionstorage": {}
+      },
+      "api": {
+        "cazadero": {}
+      }
+    }
+  }
+}

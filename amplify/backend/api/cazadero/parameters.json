@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "cazadero",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-11-30T11:46:31.039Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authcazadero",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
