@@ -21,6 +21,8 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabPicScreen from '../screens/TabPicScreen';
+import SignInScreen from '../screens/Auth/SignInScreen';
+import SignUpScreen from '../screens/Auth/SignUpScreen';
 import {
     RootStackParamList,
     RootTabParamList,
@@ -77,7 +79,24 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
     const colorScheme = useColorScheme();
-
+    const isAuthenticated = false;
+    if (!isAuthenticated) {
+        const isAuthenticated = false;
+        return (
+            <Stack.Navigator>
+                <Stack.Screen
+                    name='SignIn'
+                    component={SignInScreen}
+                    options={{ title: 'Sign in', headerShown: false }}
+                />
+                <Stack.Screen
+                    name='SignUp'
+                    component={SignUpScreen}
+                    options={{ title: 'Create an account' }}
+                />
+            </Stack.Navigator>
+        );
+    }
     return (
         <BottomTab.Navigator
             initialRouteName='TabOne'
