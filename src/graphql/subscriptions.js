@@ -9,13 +9,13 @@ export const onCreateOrganization = /* GraphQL */ `
       id
       name
       orgCompKey
-      regions {
+      divisions {
         items {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         nextToken
       }
@@ -32,13 +32,13 @@ export const onUpdateOrganization = /* GraphQL */ `
       id
       name
       orgCompKey
-      regions {
+      divisions {
         items {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         nextToken
       }
@@ -55,13 +55,13 @@ export const onDeleteOrganization = /* GraphQL */ `
       id
       name
       orgCompKey
-      regions {
+      divisions {
         items {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         nextToken
       }
@@ -70,16 +70,16 @@ export const onDeleteOrganization = /* GraphQL */ `
     }
   }
 `;
-export const onCreateRegion = /* GraphQL */ `
-  subscription OnCreateRegion($filter: ModelSubscriptionRegionFilterInput) {
-    onCreateRegion(filter: $filter) {
+export const onCreateDivision = /* GraphQL */ `
+  subscription OnCreateDivision($filter: ModelSubscriptionDivisionFilterInput) {
+    onCreateDivision(filter: $filter) {
       id
       code
       organization {
         id
         name
         orgCompKey
-        regions {
+        divisions {
           nextToken
         }
         createdAt
@@ -100,7 +100,7 @@ export const onCreateRegion = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -110,20 +110,20 @@ export const onCreateRegion = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      organizationRegionsId
+      organizationDivisionsId
     }
   }
 `;
-export const onUpdateRegion = /* GraphQL */ `
-  subscription OnUpdateRegion($filter: ModelSubscriptionRegionFilterInput) {
-    onUpdateRegion(filter: $filter) {
+export const onUpdateDivision = /* GraphQL */ `
+  subscription OnUpdateDivision($filter: ModelSubscriptionDivisionFilterInput) {
+    onUpdateDivision(filter: $filter) {
       id
       code
       organization {
         id
         name
         orgCompKey
-        regions {
+        divisions {
           nextToken
         }
         createdAt
@@ -144,7 +144,7 @@ export const onUpdateRegion = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -154,20 +154,20 @@ export const onUpdateRegion = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      organizationRegionsId
+      organizationDivisionsId
     }
   }
 `;
-export const onDeleteRegion = /* GraphQL */ `
-  subscription OnDeleteRegion($filter: ModelSubscriptionRegionFilterInput) {
-    onDeleteRegion(filter: $filter) {
+export const onDeleteDivision = /* GraphQL */ `
+  subscription OnDeleteDivision($filter: ModelSubscriptionDivisionFilterInput) {
+    onDeleteDivision(filter: $filter) {
       id
       code
       organization {
         id
         name
         orgCompKey
-        regions {
+        divisions {
           nextToken
         }
         createdAt
@@ -188,7 +188,7 @@ export const onDeleteRegion = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -198,7 +198,7 @@ export const onDeleteRegion = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      organizationRegionsId
+      organizationDivisionsId
     }
   }
 `;
@@ -208,7 +208,7 @@ export const onCreateEvent = /* GraphQL */ `
       id
       eventDate
       eventCompKey
-      region {
+      division {
         id
         code
         organization {
@@ -223,7 +223,7 @@ export const onCreateEvent = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        organizationRegionsId
+        organizationDivisionsId
       }
       registrations {
         items {
@@ -310,7 +310,7 @@ export const onCreateEvent = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -322,7 +322,7 @@ export const onCreateEvent = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      regionEventsId
+      divisionEventsId
       eventLocationEventsId
       eventContactEventsId
       userEventsId
@@ -336,7 +336,7 @@ export const onUpdateEvent = /* GraphQL */ `
       id
       eventDate
       eventCompKey
-      region {
+      division {
         id
         code
         organization {
@@ -351,7 +351,7 @@ export const onUpdateEvent = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        organizationRegionsId
+        organizationDivisionsId
       }
       registrations {
         items {
@@ -438,7 +438,7 @@ export const onUpdateEvent = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -450,7 +450,7 @@ export const onUpdateEvent = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      regionEventsId
+      divisionEventsId
       eventLocationEventsId
       eventContactEventsId
       userEventsId
@@ -464,7 +464,7 @@ export const onDeleteEvent = /* GraphQL */ `
       id
       eventDate
       eventCompKey
-      region {
+      division {
         id
         code
         organization {
@@ -479,7 +479,7 @@ export const onDeleteEvent = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        organizationRegionsId
+        organizationDivisionsId
       }
       registrations {
         items {
@@ -566,7 +566,7 @@ export const onDeleteEvent = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -578,7 +578,7 @@ export const onDeleteEvent = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      regionEventsId
+      divisionEventsId
       eventLocationEventsId
       eventContactEventsId
       userEventsId
@@ -613,7 +613,7 @@ export const onCreateEventLocation = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -653,7 +653,7 @@ export const onUpdateEventLocation = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -693,7 +693,7 @@ export const onDeleteEventLocation = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -735,7 +735,7 @@ export const onCreateEventContact = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -777,7 +777,7 @@ export const onUpdateEventContact = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -819,7 +819,7 @@ export const onDeleteEventContact = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -846,12 +846,12 @@ export const onCreateMeal = /* GraphQL */ `
         id
         eventDate
         eventCompKey
-        region {
+        division {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         registrations {
           nextToken
@@ -911,7 +911,7 @@ export const onCreateMeal = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        regionEventsId
+        divisionEventsId
         eventLocationEventsId
         eventContactEventsId
         userEventsId
@@ -937,12 +937,12 @@ export const onUpdateMeal = /* GraphQL */ `
         id
         eventDate
         eventCompKey
-        region {
+        division {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         registrations {
           nextToken
@@ -1002,7 +1002,7 @@ export const onUpdateMeal = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        regionEventsId
+        divisionEventsId
         eventLocationEventsId
         eventContactEventsId
         userEventsId
@@ -1028,12 +1028,12 @@ export const onDeleteMeal = /* GraphQL */ `
         id
         eventDate
         eventCompKey
-        region {
+        division {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         registrations {
           nextToken
@@ -1093,7 +1093,7 @@ export const onDeleteMeal = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        regionEventsId
+        divisionEventsId
         eventLocationEventsId
         eventContactEventsId
         userEventsId
@@ -1115,12 +1115,12 @@ export const onCreateRegistration = /* GraphQL */ `
         id
         eventDate
         eventCompKey
-        region {
+        division {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         registrations {
           nextToken
@@ -1180,7 +1180,7 @@ export const onCreateRegistration = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        regionEventsId
+        divisionEventsId
         eventLocationEventsId
         eventContactEventsId
         userEventsId
@@ -1218,12 +1218,12 @@ export const onUpdateRegistration = /* GraphQL */ `
         id
         eventDate
         eventCompKey
-        region {
+        division {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         registrations {
           nextToken
@@ -1283,7 +1283,7 @@ export const onUpdateRegistration = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        regionEventsId
+        divisionEventsId
         eventLocationEventsId
         eventContactEventsId
         userEventsId
@@ -1321,12 +1321,12 @@ export const onDeleteRegistration = /* GraphQL */ `
         id
         eventDate
         eventCompKey
-        region {
+        division {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         registrations {
           nextToken
@@ -1386,7 +1386,7 @@ export const onDeleteRegistration = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        regionEventsId
+        divisionEventsId
         eventLocationEventsId
         eventContactEventsId
         userEventsId
@@ -1447,7 +1447,7 @@ export const onCreateUser = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -1493,7 +1493,7 @@ export const onUpdateUser = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -1539,7 +1539,7 @@ export const onDeleteUser = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId

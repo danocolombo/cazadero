@@ -7,13 +7,13 @@ export const getOrganization = /* GraphQL */ `
       id
       name
       orgCompKey
-      regions {
+      divisions {
         items {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         nextToken
       }
@@ -33,7 +33,7 @@ export const listOrganizations = /* GraphQL */ `
         id
         name
         orgCompKey
-        regions {
+        divisions {
           nextToken
         }
         createdAt
@@ -43,16 +43,16 @@ export const listOrganizations = /* GraphQL */ `
     }
   }
 `;
-export const getRegion = /* GraphQL */ `
-  query GetRegion($id: ID!) {
-    getRegion(id: $id) {
+export const getDivision = /* GraphQL */ `
+  query GetDivision($id: ID!) {
+    getDivision(id: $id) {
       id
       code
       organization {
         id
         name
         orgCompKey
-        regions {
+        divisions {
           nextToken
         }
         createdAt
@@ -73,7 +73,7 @@ export const getRegion = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -83,17 +83,17 @@ export const getRegion = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      organizationRegionsId
+      organizationDivisionsId
     }
   }
 `;
-export const listRegions = /* GraphQL */ `
-  query ListRegions(
-    $filter: ModelRegionFilterInput
+export const listDivisions = /* GraphQL */ `
+  query ListDivisions(
+    $filter: ModelDivisionFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listRegions(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listDivisions(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         code
@@ -109,7 +109,7 @@ export const listRegions = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        organizationRegionsId
+        organizationDivisionsId
       }
       nextToken
     }
@@ -121,7 +121,7 @@ export const getEvent = /* GraphQL */ `
       id
       eventDate
       eventCompKey
-      region {
+      division {
         id
         code
         organization {
@@ -136,7 +136,7 @@ export const getEvent = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        organizationRegionsId
+        organizationDivisionsId
       }
       registrations {
         items {
@@ -223,7 +223,7 @@ export const getEvent = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -235,7 +235,7 @@ export const getEvent = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      regionEventsId
+      divisionEventsId
       eventLocationEventsId
       eventContactEventsId
       userEventsId
@@ -254,12 +254,12 @@ export const listEvents = /* GraphQL */ `
         id
         eventDate
         eventCompKey
-        region {
+        division {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         registrations {
           nextToken
@@ -319,7 +319,7 @@ export const listEvents = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        regionEventsId
+        divisionEventsId
         eventLocationEventsId
         eventContactEventsId
         userEventsId
@@ -354,7 +354,7 @@ export const getEventLocation = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -419,7 +419,7 @@ export const getEventContact = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -473,12 +473,12 @@ export const getMeal = /* GraphQL */ `
         id
         eventDate
         eventCompKey
-        region {
+        division {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         registrations {
           nextToken
@@ -538,7 +538,7 @@ export const getMeal = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        regionEventsId
+        divisionEventsId
         eventLocationEventsId
         eventContactEventsId
         userEventsId
@@ -579,7 +579,7 @@ export const listMeals = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -601,12 +601,12 @@ export const getRegistration = /* GraphQL */ `
         id
         eventDate
         eventCompKey
-        region {
+        division {
           id
           code
           createdAt
           updatedAt
-          organizationRegionsId
+          organizationDivisionsId
         }
         registrations {
           nextToken
@@ -666,7 +666,7 @@ export const getRegistration = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        regionEventsId
+        divisionEventsId
         eventLocationEventsId
         eventContactEventsId
         userEventsId
@@ -717,7 +717,7 @@ export const listRegistrations = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId
@@ -774,7 +774,7 @@ export const getUser = /* GraphQL */ `
           graphic
           createdAt
           updatedAt
-          regionEventsId
+          divisionEventsId
           eventLocationEventsId
           eventContactEventsId
           userEventsId

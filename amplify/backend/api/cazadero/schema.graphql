@@ -7,10 +7,10 @@ type Organization @model {
     id: ID!
     name: String!
     orgCompKey: String
-    regions: [Region] @hasMany
+    divisions: [Division] @hasMany
 }
 
-type Region @model {
+type Division @model {
     id: ID!
     code: String
     organization: Organization @belongsTo
@@ -21,7 +21,7 @@ type Event @model {
     id: ID!
     eventDate: AWSDate
     eventCompKey: String
-    region: Region @belongsTo
+    division: Division @belongsTo
     registrations: [Registration] @hasMany
     coordinator: User @belongsTo
     status: String
