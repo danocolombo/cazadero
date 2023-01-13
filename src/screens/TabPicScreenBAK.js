@@ -2,7 +2,7 @@ import { View, Text, Image, Button } from 'react-native';
 import React, { useState } from 'react';
 import * as ImagePicker from 'expo-image-picker';
 import { Auth, Storage, API } from 'aws-amplify';
-import { createUser } from '../src/graphql/mutations';
+import { createUser } from '../graphql/mutations';
 const TabPicScreen = () => {
     const [image, setImage] = useState(null);
     const [graphieFile, setGraphicFile] = useState();

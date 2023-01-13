@@ -1,456 +1,1554 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateSystem = /* GraphQL */ `
-  subscription OnCreateSystem($filter: ModelSubscriptionSystemFilterInput) {
-    onCreateSystem(filter: $filter) {
-      id
-      version
-      ios_version
-      android_version
-      defaultProfilePicture
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const onUpdateSystem = /* GraphQL */ `
-  subscription OnUpdateSystem($filter: ModelSubscriptionSystemFilterInput) {
-    onUpdateSystem(filter: $filter) {
-      id
-      version
-      ios_version
-      android_version
-      defaultProfilePicture
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const onDeleteSystem = /* GraphQL */ `
-  subscription OnDeleteSystem($filter: ModelSubscriptionSystemFilterInput) {
-    onDeleteSystem(filter: $filter) {
-      id
-      version
-      ios_version
-      android_version
-      defaultProfilePicture
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const onCreateLocation = /* GraphQL */ `
-  subscription OnCreateLocation($filter: ModelSubscriptionLocationFilterInput) {
-    onCreateLocation(filter: $filter) {
-      id
-      street
-      city
-      stateProv
-      postalCode
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const onUpdateLocation = /* GraphQL */ `
-  subscription OnUpdateLocation($filter: ModelSubscriptionLocationFilterInput) {
-    onUpdateLocation(filter: $filter) {
-      id
-      street
-      city
-      stateProv
-      postalCode
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const onDeleteLocation = /* GraphQL */ `
-  subscription OnDeleteLocation($filter: ModelSubscriptionLocationFilterInput) {
-    onDeleteLocation(filter: $filter) {
-      id
-      street
-      city
-      stateProv
-      postalCode
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const onCreateOrganizations = /* GraphQL */ `
-  subscription OnCreateOrganizations(
-    $filter: ModelSubscriptionOrganizationsFilterInput
+export const onCreateOrganization = /* GraphQL */ `
+  subscription OnCreateOrganization(
+    $filter: ModelSubscriptionOrganizationFilterInput
   ) {
-    onCreateOrganizations(filter: $filter) {
+    onCreateOrganization(filter: $filter) {
       id
-      code
       name
-      heroMessage
-      Affiliations {
+      orgCompKey
+      regions {
         items {
           id
-          role
-          status
-          userID
-          organizationsID
+          code
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          organizationRegionsId
         }
         nextToken
-        startedAt
       }
-      Location {
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateOrganization = /* GraphQL */ `
+  subscription OnUpdateOrganization(
+    $filter: ModelSubscriptionOrganizationFilterInput
+  ) {
+    onUpdateOrganization(filter: $filter) {
+      id
+      name
+      orgCompKey
+      regions {
+        items {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteOrganization = /* GraphQL */ `
+  subscription OnDeleteOrganization(
+    $filter: ModelSubscriptionOrganizationFilterInput
+  ) {
+    onDeleteOrganization(filter: $filter) {
+      id
+      name
+      orgCompKey
+      regions {
+        items {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateRegion = /* GraphQL */ `
+  subscription OnCreateRegion($filter: ModelSubscriptionRegionFilterInput) {
+    onCreateRegion(filter: $filter) {
+      id
+      code
+      organization {
+        id
+        name
+        orgCompKey
+        regions {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRegionsId
+    }
+  }
+`;
+export const onUpdateRegion = /* GraphQL */ `
+  subscription OnUpdateRegion($filter: ModelSubscriptionRegionFilterInput) {
+    onUpdateRegion(filter: $filter) {
+      id
+      code
+      organization {
+        id
+        name
+        orgCompKey
+        regions {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRegionsId
+    }
+  }
+`;
+export const onDeleteRegion = /* GraphQL */ `
+  subscription OnDeleteRegion($filter: ModelSubscriptionRegionFilterInput) {
+    onDeleteRegion(filter: $filter) {
+      id
+      code
+      organization {
+        id
+        name
+        orgCompKey
+        regions {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRegionsId
+    }
+  }
+`;
+export const onCreateEvent = /* GraphQL */ `
+  subscription OnCreateEvent($filter: ModelSubscriptionEventFilterInput) {
+    onCreateEvent(filter: $filter) {
+      id
+      eventDate
+      eventCompKey
+      region {
+        id
+        code
+        organization {
+          id
+          name
+          orgCompKey
+          createdAt
+          updatedAt
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        organizationRegionsId
+      }
+      registrations {
+        items {
+          id
+          createdAt
+          updatedAt
+          eventRegistrationsId
+          userRegistrationsId
+        }
+        nextToken
+      }
+      coordinator {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      status
+      plannedCount
+      actualCount
+      startTime
+      endTime
+      message
+      name
+      graphic
+      location {
         id
         street
         city
         stateProv
         postalCode
+        latitude
+        longitude
+        events {
+          nextToken
+        }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      }
+      contact {
+        id
+        firstName
+        lastName
+        email
+        phone
+        street
+        city
+        stateProv
+        postalCode
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      meal {
+        id
+        deadline
+        cost
+        plannedCount
+        actualCount
+        startTime
+        message
+        event {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        createdAt
+        updatedAt
+        mealEventId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      organizationsLocationId
+      regionEventsId
+      eventLocationEventsId
+      eventContactEventsId
+      userEventsId
+      eventMealId
     }
   }
 `;
-export const onUpdateOrganizations = /* GraphQL */ `
-  subscription OnUpdateOrganizations(
-    $filter: ModelSubscriptionOrganizationsFilterInput
-  ) {
-    onUpdateOrganizations(filter: $filter) {
+export const onUpdateEvent = /* GraphQL */ `
+  subscription OnUpdateEvent($filter: ModelSubscriptionEventFilterInput) {
+    onUpdateEvent(filter: $filter) {
       id
-      code
-      name
-      heroMessage
-      Affiliations {
-        items {
+      eventDate
+      eventCompKey
+      region {
+        id
+        code
+        organization {
           id
-          role
-          status
-          userID
-          organizationsID
+          name
+          orgCompKey
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        organizationRegionsId
+      }
+      registrations {
+        items {
+          id
+          createdAt
+          updatedAt
+          eventRegistrationsId
+          userRegistrationsId
         }
         nextToken
-        startedAt
       }
-      Location {
+      coordinator {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      status
+      plannedCount
+      actualCount
+      startTime
+      endTime
+      message
+      name
+      graphic
+      location {
         id
         street
         city
         stateProv
         postalCode
+        latitude
+        longitude
+        events {
+          nextToken
+        }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      }
+      contact {
+        id
+        firstName
+        lastName
+        email
+        phone
+        street
+        city
+        stateProv
+        postalCode
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      meal {
+        id
+        deadline
+        cost
+        plannedCount
+        actualCount
+        startTime
+        message
+        event {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        createdAt
+        updatedAt
+        mealEventId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      organizationsLocationId
+      regionEventsId
+      eventLocationEventsId
+      eventContactEventsId
+      userEventsId
+      eventMealId
     }
   }
 `;
-export const onDeleteOrganizations = /* GraphQL */ `
-  subscription OnDeleteOrganizations(
-    $filter: ModelSubscriptionOrganizationsFilterInput
-  ) {
-    onDeleteOrganizations(filter: $filter) {
+export const onDeleteEvent = /* GraphQL */ `
+  subscription OnDeleteEvent($filter: ModelSubscriptionEventFilterInput) {
+    onDeleteEvent(filter: $filter) {
       id
-      code
-      name
-      heroMessage
-      Affiliations {
-        items {
+      eventDate
+      eventCompKey
+      region {
+        id
+        code
+        organization {
           id
-          role
-          status
-          userID
-          organizationsID
+          name
+          orgCompKey
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        organizationRegionsId
+      }
+      registrations {
+        items {
+          id
+          createdAt
+          updatedAt
+          eventRegistrationsId
+          userRegistrationsId
         }
         nextToken
-        startedAt
       }
-      Location {
+      coordinator {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      status
+      plannedCount
+      actualCount
+      startTime
+      endTime
+      message
+      name
+      graphic
+      location {
         id
         street
         city
         stateProv
         postalCode
+        latitude
+        longitude
+        events {
+          nextToken
+        }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      }
+      contact {
+        id
+        firstName
+        lastName
+        email
+        phone
+        street
+        city
+        stateProv
+        postalCode
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      meal {
+        id
+        deadline
+        cost
+        plannedCount
+        actualCount
+        startTime
+        message
+        event {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        createdAt
+        updatedAt
+        mealEventId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      organizationsLocationId
+      regionEventsId
+      eventLocationEventsId
+      eventContactEventsId
+      userEventsId
+      eventMealId
     }
   }
 `;
-export const onCreateAffiliations = /* GraphQL */ `
-  subscription OnCreateAffiliations(
-    $filter: ModelSubscriptionAffiliationsFilterInput
+export const onCreateEventLocation = /* GraphQL */ `
+  subscription OnCreateEventLocation(
+    $filter: ModelSubscriptionEventLocationFilterInput
   ) {
-    onCreateAffiliations(filter: $filter) {
+    onCreateEventLocation(filter: $filter) {
       id
-      role
-      status
-      userID
-      organizationsID
+      street
+      city
+      stateProv
+      postalCode
+      latitude
+      longitude
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
-export const onUpdateAffiliations = /* GraphQL */ `
-  subscription OnUpdateAffiliations(
-    $filter: ModelSubscriptionAffiliationsFilterInput
+export const onUpdateEventLocation = /* GraphQL */ `
+  subscription OnUpdateEventLocation(
+    $filter: ModelSubscriptionEventLocationFilterInput
   ) {
-    onUpdateAffiliations(filter: $filter) {
+    onUpdateEventLocation(filter: $filter) {
       id
-      role
-      status
-      userID
-      organizationsID
+      street
+      city
+      stateProv
+      postalCode
+      latitude
+      longitude
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
-export const onDeleteAffiliations = /* GraphQL */ `
-  subscription OnDeleteAffiliations(
-    $filter: ModelSubscriptionAffiliationsFilterInput
+export const onDeleteEventLocation = /* GraphQL */ `
+  subscription OnDeleteEventLocation(
+    $filter: ModelSubscriptionEventLocationFilterInput
   ) {
-    onDeleteAffiliations(filter: $filter) {
+    onDeleteEventLocation(filter: $filter) {
       id
-      role
-      status
-      userID
-      organizationsID
+      street
+      city
+      stateProv
+      postalCode
+      latitude
+      longitude
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
+    }
+  }
+`;
+export const onCreateEventContact = /* GraphQL */ `
+  subscription OnCreateEventContact(
+    $filter: ModelSubscriptionEventContactFilterInput
+  ) {
+    onCreateEventContact(filter: $filter) {
+      id
+      firstName
+      lastName
+      email
+      phone
+      street
+      city
+      stateProv
+      postalCode
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateEventContact = /* GraphQL */ `
+  subscription OnUpdateEventContact(
+    $filter: ModelSubscriptionEventContactFilterInput
+  ) {
+    onUpdateEventContact(filter: $filter) {
+      id
+      firstName
+      lastName
+      email
+      phone
+      street
+      city
+      stateProv
+      postalCode
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteEventContact = /* GraphQL */ `
+  subscription OnDeleteEventContact(
+    $filter: ModelSubscriptionEventContactFilterInput
+  ) {
+    onDeleteEventContact(filter: $filter) {
+      id
+      firstName
+      lastName
+      email
+      phone
+      street
+      city
+      stateProv
+      postalCode
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateMeal = /* GraphQL */ `
+  subscription OnCreateMeal($filter: ModelSubscriptionMealFilterInput) {
+    onCreateMeal(filter: $filter) {
+      id
+      deadline
+      cost
+      plannedCount
+      actualCount
+      startTime
+      message
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      createdAt
+      updatedAt
+      mealEventId
+    }
+  }
+`;
+export const onUpdateMeal = /* GraphQL */ `
+  subscription OnUpdateMeal($filter: ModelSubscriptionMealFilterInput) {
+    onUpdateMeal(filter: $filter) {
+      id
+      deadline
+      cost
+      plannedCount
+      actualCount
+      startTime
+      message
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      createdAt
+      updatedAt
+      mealEventId
+    }
+  }
+`;
+export const onDeleteMeal = /* GraphQL */ `
+  subscription OnDeleteMeal($filter: ModelSubscriptionMealFilterInput) {
+    onDeleteMeal(filter: $filter) {
+      id
+      deadline
+      cost
+      plannedCount
+      actualCount
+      startTime
+      message
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      createdAt
+      updatedAt
+      mealEventId
+    }
+  }
+`;
+export const onCreateRegistration = /* GraphQL */ `
+  subscription OnCreateRegistration(
+    $filter: ModelSubscriptionRegistrationFilterInput
+  ) {
+    onCreateRegistration(filter: $filter) {
+      id
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      registrar {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      eventRegistrationsId
+      userRegistrationsId
+    }
+  }
+`;
+export const onUpdateRegistration = /* GraphQL */ `
+  subscription OnUpdateRegistration(
+    $filter: ModelSubscriptionRegistrationFilterInput
+  ) {
+    onUpdateRegistration(filter: $filter) {
+      id
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      registrar {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      eventRegistrationsId
+      userRegistrationsId
+    }
+  }
+`;
+export const onDeleteRegistration = /* GraphQL */ `
+  subscription OnDeleteRegistration(
+    $filter: ModelSubscriptionRegistrationFilterInput
+  ) {
+    onDeleteRegistration(filter: $filter) {
+      id
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      registrar {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      eventRegistrationsId
+      userRegistrationsId
     }
   }
 `;
 export const onCreateUser = /* GraphQL */ `
-  subscription OnCreateUser(
-    $filter: ModelSubscriptionUserFilterInput
-    $owner: String
-  ) {
-    onCreateUser(filter: $filter, owner: $owner) {
+  subscription OnCreateUser($filter: ModelSubscriptionUserFilterInput) {
+    onCreateUser(filter: $filter) {
       id
       sub
+      username
       firstName
       lastName
-      username
-      email
-      phone
-      Affiliations {
+      registrations {
         items {
           id
-          role
-          status
-          userID
-          organizationsID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          eventRegistrationsId
+          userRegistrationsId
         }
         nextToken
-        startedAt
       }
-      Location {
-        id
-        street
-        city
-        stateProv
-        postalCode
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
       }
-      birthday
-      shirt
-      picture
-      defaulltOrgID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userLocationId
-      owner
     }
   }
 `;
 export const onUpdateUser = /* GraphQL */ `
-  subscription OnUpdateUser(
-    $filter: ModelSubscriptionUserFilterInput
-    $owner: String
-  ) {
-    onUpdateUser(filter: $filter, owner: $owner) {
+  subscription OnUpdateUser($filter: ModelSubscriptionUserFilterInput) {
+    onUpdateUser(filter: $filter) {
       id
       sub
+      username
       firstName
       lastName
-      username
-      email
-      phone
-      Affiliations {
+      registrations {
         items {
           id
-          role
-          status
-          userID
-          organizationsID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          eventRegistrationsId
+          userRegistrationsId
         }
         nextToken
-        startedAt
       }
-      Location {
-        id
-        street
-        city
-        stateProv
-        postalCode
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
       }
-      birthday
-      shirt
-      picture
-      defaulltOrgID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userLocationId
-      owner
     }
   }
 `;
 export const onDeleteUser = /* GraphQL */ `
-  subscription OnDeleteUser(
-    $filter: ModelSubscriptionUserFilterInput
-    $owner: String
-  ) {
-    onDeleteUser(filter: $filter, owner: $owner) {
+  subscription OnDeleteUser($filter: ModelSubscriptionUserFilterInput) {
+    onDeleteUser(filter: $filter) {
       id
       sub
+      username
       firstName
       lastName
-      username
-      email
-      phone
-      Affiliations {
+      registrations {
         items {
           id
-          role
-          status
-          userID
-          organizationsID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          eventRegistrationsId
+          userRegistrationsId
         }
         nextToken
-        startedAt
       }
-      Location {
-        id
-        street
-        city
-        stateProv
-        postalCode
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
       }
-      birthday
-      shirt
-      picture
-      defaulltOrgID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userLocationId
-      owner
     }
   }
 `;

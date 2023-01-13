@@ -8,7 +8,7 @@ import Amplify from '@aws-amplify/core';
 import { Constants } from 'expo-constants';
 import * as Clipboard from 'expo-clipboard';
 
-import { createUser } from '../src/graphql/mutations';
+import { createUser } from '../graphql/mutations';
 const TabPicScreen = () => {
     const [image, setImage] = useState(null);
     const [percentage, setPercentage] = useState(0);

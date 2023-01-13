@@ -11,7 +11,7 @@ import {
     DarkTheme,
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ColorSchemeName, Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
@@ -27,14 +27,29 @@ import {
     RootStackParamList,
     RootTabParamList,
     RootTabScreenProps,
-} from '../types';
+} from '../../types';
 import LinkingConfiguration from './LinkingConfiguration';
-
+import { Auth } from 'aws-amplify';
 export default function Navigation({
     colorScheme,
 }: {
     colorScheme: ColorSchemeName;
 }) {
+    const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
+    async function checkUser() {
+        const current = await Auth.currentAuthenticatedUser();
+        if (current?.attributes?.sub) {
+            setUserLoggedIn(true);
+        }
+    }
+    useEffect(() => {
+        const listener = (data) => {
+            if (data.payload.event === 'signIn') {
+                //      signIn acknowledged
+                checkUser();
+            }
+        };
+    });
     return (
         <NavigationContainer
             linking={LinkingConfiguration}
@@ -79,7 +94,8 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
     const colorScheme = useColorScheme();
-    const isAuthenticated = false;
+    const isAuthenticated = true;
+
     if (!isAuthenticated) {
         const isAuthenticated = false;
         return (

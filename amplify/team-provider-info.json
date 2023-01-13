@@ -14,21 +14,18 @@
     "categories": {
       "auth": {
         "cazadero": {
-          "userPoolId": "us-east-1_LecNXt66q",
-          "userPoolName": "Meeter",
-          "webClientId": "3tn2h8s0mv2d342i1ovkr6qrd5",
-          "nativeClientId": "3tn2h8s0mv2d342i1ovkr6qrd5",
-          "identityPoolId": "us-east-1:5568f877-2766-4ea3-a9a6-442df0d29980",
-          "identityPoolName": "Meeter",
-          "allowUnauthenticatedIdentities": true,
-          "authRoleArn": "arn:aws:iam::226036691416:role/Cognito_MeeterAuth_Role",
-          "authRoleName": "Cognito_MeeterAuth_Role",
-          "unauthRoleArn": "arn:aws:iam::226036691416:role/Cognito_MeeterUnauth_Role",
-          "unauthRoleName": "Cognito_MeeterUnauth_Role"
+          "userPoolId": "us-east-1_NkFzGWucv",
+          "userPoolName": "cazadero",
+          "webClientId": "74bre3h17jp2m2bftpl4sml87r",
+          "nativeClientId": "74bre3h17jp2m2bftpl4sml87r",
+          "identityPoolId": "us-east-1:f49f4036-ec3d-4803-8ea4-4b1ae38ffca2",
+          "identityPoolName": "cazadero-identity",
+          "allowUnauthenticatedIdentities": false,
+          "authRoleArn": "arn:aws:iam::226036691416:role/amplify-cazadero-staging-25804-authRole",
+          "authRoleName": "amplify-cazadero-staging-25804-authRole",
+          "unauthRoleArn": "arn:aws:iam::226036691416:role/amplify-cazadero-staging-25804-unauthRole",
+          "unauthRoleName": "amplify-cazadero-staging-25804-unauthRole"
         }
-      },
-      "storage": {
-        "s3cazaderosolutionstorage": {}
       },
       "api": {
         "cazadero": {}

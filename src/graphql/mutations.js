@@ -1,315 +1,1455 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createSystem = /* GraphQL */ `
-  mutation CreateSystem(
-    $input: CreateSystemInput!
-    $condition: ModelSystemConditionInput
+export const createOrganization = /* GraphQL */ `
+  mutation CreateOrganization(
+    $input: CreateOrganizationInput!
+    $condition: ModelOrganizationConditionInput
   ) {
-    createSystem(input: $input, condition: $condition) {
+    createOrganization(input: $input, condition: $condition) {
       id
-      version
-      ios_version
-      android_version
-      defaultProfilePicture
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const updateSystem = /* GraphQL */ `
-  mutation UpdateSystem(
-    $input: UpdateSystemInput!
-    $condition: ModelSystemConditionInput
-  ) {
-    updateSystem(input: $input, condition: $condition) {
-      id
-      version
-      ios_version
-      android_version
-      defaultProfilePicture
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const deleteSystem = /* GraphQL */ `
-  mutation DeleteSystem(
-    $input: DeleteSystemInput!
-    $condition: ModelSystemConditionInput
-  ) {
-    deleteSystem(input: $input, condition: $condition) {
-      id
-      version
-      ios_version
-      android_version
-      defaultProfilePicture
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const createLocation = /* GraphQL */ `
-  mutation CreateLocation(
-    $input: CreateLocationInput!
-    $condition: ModelLocationConditionInput
-  ) {
-    createLocation(input: $input, condition: $condition) {
-      id
-      street
-      city
-      stateProv
-      postalCode
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const updateLocation = /* GraphQL */ `
-  mutation UpdateLocation(
-    $input: UpdateLocationInput!
-    $condition: ModelLocationConditionInput
-  ) {
-    updateLocation(input: $input, condition: $condition) {
-      id
-      street
-      city
-      stateProv
-      postalCode
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const deleteLocation = /* GraphQL */ `
-  mutation DeleteLocation(
-    $input: DeleteLocationInput!
-    $condition: ModelLocationConditionInput
-  ) {
-    deleteLocation(input: $input, condition: $condition) {
-      id
-      street
-      city
-      stateProv
-      postalCode
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const createOrganizations = /* GraphQL */ `
-  mutation CreateOrganizations(
-    $input: CreateOrganizationsInput!
-    $condition: ModelOrganizationsConditionInput
-  ) {
-    createOrganizations(input: $input, condition: $condition) {
-      id
-      code
       name
-      heroMessage
-      Affiliations {
+      orgCompKey
+      regions {
         items {
           id
-          role
-          status
-          userID
-          organizationsID
+          code
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          organizationRegionsId
         }
         nextToken
-        startedAt
       }
-      Location {
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateOrganization = /* GraphQL */ `
+  mutation UpdateOrganization(
+    $input: UpdateOrganizationInput!
+    $condition: ModelOrganizationConditionInput
+  ) {
+    updateOrganization(input: $input, condition: $condition) {
+      id
+      name
+      orgCompKey
+      regions {
+        items {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteOrganization = /* GraphQL */ `
+  mutation DeleteOrganization(
+    $input: DeleteOrganizationInput!
+    $condition: ModelOrganizationConditionInput
+  ) {
+    deleteOrganization(input: $input, condition: $condition) {
+      id
+      name
+      orgCompKey
+      regions {
+        items {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createRegion = /* GraphQL */ `
+  mutation CreateRegion(
+    $input: CreateRegionInput!
+    $condition: ModelRegionConditionInput
+  ) {
+    createRegion(input: $input, condition: $condition) {
+      id
+      code
+      organization {
+        id
+        name
+        orgCompKey
+        regions {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRegionsId
+    }
+  }
+`;
+export const updateRegion = /* GraphQL */ `
+  mutation UpdateRegion(
+    $input: UpdateRegionInput!
+    $condition: ModelRegionConditionInput
+  ) {
+    updateRegion(input: $input, condition: $condition) {
+      id
+      code
+      organization {
+        id
+        name
+        orgCompKey
+        regions {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRegionsId
+    }
+  }
+`;
+export const deleteRegion = /* GraphQL */ `
+  mutation DeleteRegion(
+    $input: DeleteRegionInput!
+    $condition: ModelRegionConditionInput
+  ) {
+    deleteRegion(input: $input, condition: $condition) {
+      id
+      code
+      organization {
+        id
+        name
+        orgCompKey
+        regions {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRegionsId
+    }
+  }
+`;
+export const createEvent = /* GraphQL */ `
+  mutation CreateEvent(
+    $input: CreateEventInput!
+    $condition: ModelEventConditionInput
+  ) {
+    createEvent(input: $input, condition: $condition) {
+      id
+      eventDate
+      eventCompKey
+      region {
+        id
+        code
+        organization {
+          id
+          name
+          orgCompKey
+          createdAt
+          updatedAt
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        organizationRegionsId
+      }
+      registrations {
+        items {
+          id
+          createdAt
+          updatedAt
+          eventRegistrationsId
+          userRegistrationsId
+        }
+        nextToken
+      }
+      coordinator {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      status
+      plannedCount
+      actualCount
+      startTime
+      endTime
+      message
+      name
+      graphic
+      location {
         id
         street
         city
         stateProv
         postalCode
+        latitude
+        longitude
+        events {
+          nextToken
+        }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      }
+      contact {
+        id
+        firstName
+        lastName
+        email
+        phone
+        street
+        city
+        stateProv
+        postalCode
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      meal {
+        id
+        deadline
+        cost
+        plannedCount
+        actualCount
+        startTime
+        message
+        event {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        createdAt
+        updatedAt
+        mealEventId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      organizationsLocationId
+      regionEventsId
+      eventLocationEventsId
+      eventContactEventsId
+      userEventsId
+      eventMealId
     }
   }
 `;
-export const updateOrganizations = /* GraphQL */ `
-  mutation UpdateOrganizations(
-    $input: UpdateOrganizationsInput!
-    $condition: ModelOrganizationsConditionInput
+export const updateEvent = /* GraphQL */ `
+  mutation UpdateEvent(
+    $input: UpdateEventInput!
+    $condition: ModelEventConditionInput
   ) {
-    updateOrganizations(input: $input, condition: $condition) {
+    updateEvent(input: $input, condition: $condition) {
       id
-      code
-      name
-      heroMessage
-      Affiliations {
-        items {
+      eventDate
+      eventCompKey
+      region {
+        id
+        code
+        organization {
           id
-          role
-          status
-          userID
-          organizationsID
+          name
+          orgCompKey
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        organizationRegionsId
+      }
+      registrations {
+        items {
+          id
+          createdAt
+          updatedAt
+          eventRegistrationsId
+          userRegistrationsId
         }
         nextToken
-        startedAt
       }
-      Location {
+      coordinator {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      status
+      plannedCount
+      actualCount
+      startTime
+      endTime
+      message
+      name
+      graphic
+      location {
         id
         street
         city
         stateProv
         postalCode
+        latitude
+        longitude
+        events {
+          nextToken
+        }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      }
+      contact {
+        id
+        firstName
+        lastName
+        email
+        phone
+        street
+        city
+        stateProv
+        postalCode
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      meal {
+        id
+        deadline
+        cost
+        plannedCount
+        actualCount
+        startTime
+        message
+        event {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        createdAt
+        updatedAt
+        mealEventId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      organizationsLocationId
+      regionEventsId
+      eventLocationEventsId
+      eventContactEventsId
+      userEventsId
+      eventMealId
     }
   }
 `;
-export const deleteOrganizations = /* GraphQL */ `
-  mutation DeleteOrganizations(
-    $input: DeleteOrganizationsInput!
-    $condition: ModelOrganizationsConditionInput
+export const deleteEvent = /* GraphQL */ `
+  mutation DeleteEvent(
+    $input: DeleteEventInput!
+    $condition: ModelEventConditionInput
   ) {
-    deleteOrganizations(input: $input, condition: $condition) {
+    deleteEvent(input: $input, condition: $condition) {
       id
-      code
-      name
-      heroMessage
-      Affiliations {
-        items {
+      eventDate
+      eventCompKey
+      region {
+        id
+        code
+        organization {
           id
-          role
-          status
-          userID
-          organizationsID
+          name
+          orgCompKey
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        organizationRegionsId
+      }
+      registrations {
+        items {
+          id
+          createdAt
+          updatedAt
+          eventRegistrationsId
+          userRegistrationsId
         }
         nextToken
-        startedAt
       }
-      Location {
+      coordinator {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      status
+      plannedCount
+      actualCount
+      startTime
+      endTime
+      message
+      name
+      graphic
+      location {
         id
         street
         city
         stateProv
         postalCode
+        latitude
+        longitude
+        events {
+          nextToken
+        }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      }
+      contact {
+        id
+        firstName
+        lastName
+        email
+        phone
+        street
+        city
+        stateProv
+        postalCode
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      meal {
+        id
+        deadline
+        cost
+        plannedCount
+        actualCount
+        startTime
+        message
+        event {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        createdAt
+        updatedAt
+        mealEventId
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      organizationsLocationId
+      regionEventsId
+      eventLocationEventsId
+      eventContactEventsId
+      userEventsId
+      eventMealId
     }
   }
 `;
-export const createAffiliations = /* GraphQL */ `
-  mutation CreateAffiliations(
-    $input: CreateAffiliationsInput!
-    $condition: ModelAffiliationsConditionInput
+export const createEventLocation = /* GraphQL */ `
+  mutation CreateEventLocation(
+    $input: CreateEventLocationInput!
+    $condition: ModelEventLocationConditionInput
   ) {
-    createAffiliations(input: $input, condition: $condition) {
+    createEventLocation(input: $input, condition: $condition) {
       id
-      role
-      status
-      userID
-      organizationsID
+      street
+      city
+      stateProv
+      postalCode
+      latitude
+      longitude
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
-export const updateAffiliations = /* GraphQL */ `
-  mutation UpdateAffiliations(
-    $input: UpdateAffiliationsInput!
-    $condition: ModelAffiliationsConditionInput
+export const updateEventLocation = /* GraphQL */ `
+  mutation UpdateEventLocation(
+    $input: UpdateEventLocationInput!
+    $condition: ModelEventLocationConditionInput
   ) {
-    updateAffiliations(input: $input, condition: $condition) {
+    updateEventLocation(input: $input, condition: $condition) {
       id
-      role
-      status
-      userID
-      organizationsID
+      street
+      city
+      stateProv
+      postalCode
+      latitude
+      longitude
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
-export const deleteAffiliations = /* GraphQL */ `
-  mutation DeleteAffiliations(
-    $input: DeleteAffiliationsInput!
-    $condition: ModelAffiliationsConditionInput
+export const deleteEventLocation = /* GraphQL */ `
+  mutation DeleteEventLocation(
+    $input: DeleteEventLocationInput!
+    $condition: ModelEventLocationConditionInput
   ) {
-    deleteAffiliations(input: $input, condition: $condition) {
+    deleteEventLocation(input: $input, condition: $condition) {
       id
-      role
-      status
-      userID
-      organizationsID
+      street
+      city
+      stateProv
+      postalCode
+      latitude
+      longitude
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
+    }
+  }
+`;
+export const createEventContact = /* GraphQL */ `
+  mutation CreateEventContact(
+    $input: CreateEventContactInput!
+    $condition: ModelEventContactConditionInput
+  ) {
+    createEventContact(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      email
+      phone
+      street
+      city
+      stateProv
+      postalCode
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateEventContact = /* GraphQL */ `
+  mutation UpdateEventContact(
+    $input: UpdateEventContactInput!
+    $condition: ModelEventContactConditionInput
+  ) {
+    updateEventContact(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      email
+      phone
+      street
+      city
+      stateProv
+      postalCode
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteEventContact = /* GraphQL */ `
+  mutation DeleteEventContact(
+    $input: DeleteEventContactInput!
+    $condition: ModelEventContactConditionInput
+  ) {
+    deleteEventContact(input: $input, condition: $condition) {
+      id
+      firstName
+      lastName
+      email
+      phone
+      street
+      city
+      stateProv
+      postalCode
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createMeal = /* GraphQL */ `
+  mutation CreateMeal(
+    $input: CreateMealInput!
+    $condition: ModelMealConditionInput
+  ) {
+    createMeal(input: $input, condition: $condition) {
+      id
+      deadline
+      cost
+      plannedCount
+      actualCount
+      startTime
+      message
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      createdAt
+      updatedAt
+      mealEventId
+    }
+  }
+`;
+export const updateMeal = /* GraphQL */ `
+  mutation UpdateMeal(
+    $input: UpdateMealInput!
+    $condition: ModelMealConditionInput
+  ) {
+    updateMeal(input: $input, condition: $condition) {
+      id
+      deadline
+      cost
+      plannedCount
+      actualCount
+      startTime
+      message
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      createdAt
+      updatedAt
+      mealEventId
+    }
+  }
+`;
+export const deleteMeal = /* GraphQL */ `
+  mutation DeleteMeal(
+    $input: DeleteMealInput!
+    $condition: ModelMealConditionInput
+  ) {
+    deleteMeal(input: $input, condition: $condition) {
+      id
+      deadline
+      cost
+      plannedCount
+      actualCount
+      startTime
+      message
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      createdAt
+      updatedAt
+      mealEventId
+    }
+  }
+`;
+export const createRegistration = /* GraphQL */ `
+  mutation CreateRegistration(
+    $input: CreateRegistrationInput!
+    $condition: ModelRegistrationConditionInput
+  ) {
+    createRegistration(input: $input, condition: $condition) {
+      id
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      registrar {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      eventRegistrationsId
+      userRegistrationsId
+    }
+  }
+`;
+export const updateRegistration = /* GraphQL */ `
+  mutation UpdateRegistration(
+    $input: UpdateRegistrationInput!
+    $condition: ModelRegistrationConditionInput
+  ) {
+    updateRegistration(input: $input, condition: $condition) {
+      id
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      registrar {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      eventRegistrationsId
+      userRegistrationsId
+    }
+  }
+`;
+export const deleteRegistration = /* GraphQL */ `
+  mutation DeleteRegistration(
+    $input: DeleteRegistrationInput!
+    $condition: ModelRegistrationConditionInput
+  ) {
+    deleteRegistration(input: $input, condition: $condition) {
+      id
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      registrar {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      eventRegistrationsId
+      userRegistrationsId
     }
   }
 `;
@@ -321,50 +1461,44 @@ export const createUser = /* GraphQL */ `
     createUser(input: $input, condition: $condition) {
       id
       sub
+      username
       firstName
       lastName
-      username
-      email
-      phone
-      Affiliations {
+      registrations {
         items {
           id
-          role
-          status
-          userID
-          organizationsID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          eventRegistrationsId
+          userRegistrationsId
         }
         nextToken
-        startedAt
       }
-      Location {
-        id
-        street
-        city
-        stateProv
-        postalCode
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
       }
-      birthday
-      shirt
-      picture
-      defaulltOrgID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userLocationId
-      owner
     }
   }
 `;
@@ -376,50 +1510,44 @@ export const updateUser = /* GraphQL */ `
     updateUser(input: $input, condition: $condition) {
       id
       sub
+      username
       firstName
       lastName
-      username
-      email
-      phone
-      Affiliations {
+      registrations {
         items {
           id
-          role
-          status
-          userID
-          organizationsID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          eventRegistrationsId
+          userRegistrationsId
         }
         nextToken
-        startedAt
       }
-      Location {
-        id
-        street
-        city
-        stateProv
-        postalCode
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
       }
-      birthday
-      shirt
-      picture
-      defaulltOrgID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userLocationId
-      owner
     }
   }
 `;
@@ -431,50 +1559,44 @@ export const deleteUser = /* GraphQL */ `
     deleteUser(input: $input, condition: $condition) {
       id
       sub
+      username
       firstName
       lastName
-      username
-      email
-      phone
-      Affiliations {
+      registrations {
         items {
           id
-          role
-          status
-          userID
-          organizationsID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          eventRegistrationsId
+          userRegistrationsId
         }
         nextToken
-        startedAt
       }
-      Location {
-        id
-        street
-        city
-        stateProv
-        postalCode
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
       }
-      birthday
-      shirt
-      picture
-      defaulltOrgID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userLocationId
-      owner
     }
   }
 `;

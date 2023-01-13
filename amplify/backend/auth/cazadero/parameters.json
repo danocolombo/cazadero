@@ -3,10 +3,7 @@
   "resourceName": "cazadero",
   "serviceType": "imported",
   "region": "us-east-1",
-  "authProvidersUserPool": [],
   "requiredAttributes": [
-    "given_name",
-    "family_name",
     "email"
   ],
   "passwordPolicyMinLength": 8,

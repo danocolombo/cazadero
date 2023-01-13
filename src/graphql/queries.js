@@ -1,431 +1,743 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getSystem = /* GraphQL */ `
-  query GetSystem($id: ID!) {
-    getSystem(id: $id) {
+export const getOrganization = /* GraphQL */ `
+  query GetOrganization($id: ID!) {
+    getOrganization(id: $id) {
       id
-      version
-      ios_version
-      android_version
-      defaultProfilePicture
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listSystems = /* GraphQL */ `
-  query ListSystems(
-    $filter: ModelSystemFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listSystems(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        version
-        ios_version
-        android_version
-        defaultProfilePicture
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncSystems = /* GraphQL */ `
-  query SyncSystems(
-    $filter: ModelSystemFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncSystems(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        version
-        ios_version
-        android_version
-        defaultProfilePicture
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getLocation = /* GraphQL */ `
-  query GetLocation($id: ID!) {
-    getLocation(id: $id) {
-      id
-      street
-      city
-      stateProv
-      postalCode
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listLocations = /* GraphQL */ `
-  query ListLocations(
-    $filter: ModelLocationFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listLocations(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        street
-        city
-        stateProv
-        postalCode
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncLocations = /* GraphQL */ `
-  query SyncLocations(
-    $filter: ModelLocationFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncLocations(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        street
-        city
-        stateProv
-        postalCode
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getOrganizations = /* GraphQL */ `
-  query GetOrganizations($id: ID!) {
-    getOrganizations(id: $id) {
-      id
-      code
       name
-      heroMessage
-      Affiliations {
+      orgCompKey
+      regions {
         items {
           id
-          role
-          status
-          userID
-          organizationsID
+          code
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          organizationRegionsId
         }
         nextToken
-        startedAt
-      }
-      Location {
-        id
-        street
-        city
-        stateProv
-        postalCode
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      organizationsLocationId
     }
   }
 `;
 export const listOrganizations = /* GraphQL */ `
   query ListOrganizations(
-    $filter: ModelOrganizationsFilterInput
+    $filter: ModelOrganizationFilterInput
     $limit: Int
     $nextToken: String
   ) {
     listOrganizations(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        code
         name
-        heroMessage
-        Affiliations {
-          items {
-            id
-            role
-            status
-            userID
-            organizationsID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
+        orgCompKey
+        regions {
           nextToken
-          startedAt
-        }
-        Location {
-          id
-          street
-          city
-          stateProv
-          postalCode
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
         }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        organizationsLocationId
       }
       nextToken
-      startedAt
     }
   }
 `;
-export const syncOrganizations = /* GraphQL */ `
-  query SyncOrganizations(
-    $filter: ModelOrganizationsFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncOrganizations(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        code
-        name
-        heroMessage
-        Affiliations {
-          items {
-            id
-            role
-            status
-            userID
-            organizationsID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          nextToken
-          startedAt
-        }
-        Location {
-          id
-          street
-          city
-          stateProv
-          postalCode
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        organizationsLocationId
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getAffiliations = /* GraphQL */ `
-  query GetAffiliations($id: ID!) {
-    getAffiliations(id: $id) {
+export const getRegion = /* GraphQL */ `
+  query GetRegion($id: ID!) {
+    getRegion(id: $id) {
       id
-      role
-      status
-      userID
-      organizationsID
+      code
+      organization {
+        id
+        name
+        orgCompKey
+        regions {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
+      organizationRegionsId
     }
   }
 `;
-export const listAffiliations = /* GraphQL */ `
-  query ListAffiliations(
-    $filter: ModelAffiliationsFilterInput
+export const listRegions = /* GraphQL */ `
+  query ListRegions(
+    $filter: ModelRegionFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listAffiliations(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listRegions(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        role
-        status
-        userID
-        organizationsID
+        code
+        organization {
+          id
+          name
+          orgCompKey
+          createdAt
+          updatedAt
+        }
+        events {
+          nextToken
+        }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+        organizationRegionsId
       }
       nextToken
-      startedAt
     }
   }
 `;
-export const syncAffiliations = /* GraphQL */ `
-  query SyncAffiliations(
-    $filter: ModelAffiliationsFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncAffiliations(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
+export const getEvent = /* GraphQL */ `
+  query GetEvent($id: ID!) {
+    getEvent(id: $id) {
+      id
+      eventDate
+      eventCompKey
+      region {
         id
-        role
-        status
-        userID
-        organizationsID
+        code
+        organization {
+          id
+          name
+          orgCompKey
+          createdAt
+          updatedAt
+        }
+        events {
+          nextToken
+        }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+        organizationRegionsId
       }
-      nextToken
-      startedAt
+      registrations {
+        items {
+          id
+          createdAt
+          updatedAt
+          eventRegistrationsId
+          userRegistrationsId
+        }
+        nextToken
+      }
+      coordinator {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      status
+      plannedCount
+      actualCount
+      startTime
+      endTime
+      message
+      name
+      graphic
+      location {
+        id
+        street
+        city
+        stateProv
+        postalCode
+        latitude
+        longitude
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      contact {
+        id
+        firstName
+        lastName
+        email
+        phone
+        street
+        city
+        stateProv
+        postalCode
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      meal {
+        id
+        deadline
+        cost
+        plannedCount
+        actualCount
+        startTime
+        message
+        event {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        createdAt
+        updatedAt
+        mealEventId
+      }
+      createdAt
+      updatedAt
+      regionEventsId
+      eventLocationEventsId
+      eventContactEventsId
+      userEventsId
+      eventMealId
     }
   }
 `;
-export const affiliationsByUserID = /* GraphQL */ `
-  query AffiliationsByUserID(
-    $userID: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelAffiliationsFilterInput
+export const listEvents = /* GraphQL */ `
+  query ListEvents(
+    $filter: ModelEventFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    affiliationsByUserID(
-      userID: $userID
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
+    listEvents(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        role
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
         status
-        userID
-        organizationsID
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
       }
       nextToken
-      startedAt
     }
   }
 `;
-export const affiliationsByOrganizationsID = /* GraphQL */ `
-  query AffiliationsByOrganizationsID(
-    $organizationsID: ID!
-    $sortDirection: ModelSortDirection
-    $filter: ModelAffiliationsFilterInput
+export const getEventLocation = /* GraphQL */ `
+  query GetEventLocation($id: ID!) {
+    getEventLocation(id: $id) {
+      id
+      street
+      city
+      stateProv
+      postalCode
+      latitude
+      longitude
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listEventLocations = /* GraphQL */ `
+  query ListEventLocations(
+    $filter: ModelEventLocationFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    affiliationsByOrganizationsID(
-      organizationsID: $organizationsID
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
+    listEventLocations(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        role
-        status
-        userID
-        organizationsID
+        street
+        city
+        stateProv
+        postalCode
+        latitude
+        longitude
+        events {
+          nextToken
+        }
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
       }
       nextToken
-      startedAt
+    }
+  }
+`;
+export const getEventContact = /* GraphQL */ `
+  query GetEventContact($id: ID!) {
+    getEventContact(id: $id) {
+      id
+      firstName
+      lastName
+      email
+      phone
+      street
+      city
+      stateProv
+      postalCode
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listEventContacts = /* GraphQL */ `
+  query ListEventContacts(
+    $filter: ModelEventContactFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listEventContacts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        firstName
+        lastName
+        email
+        phone
+        street
+        city
+        stateProv
+        postalCode
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getMeal = /* GraphQL */ `
+  query GetMeal($id: ID!) {
+    getMeal(id: $id) {
+      id
+      deadline
+      cost
+      plannedCount
+      actualCount
+      startTime
+      message
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      createdAt
+      updatedAt
+      mealEventId
+    }
+  }
+`;
+export const listMeals = /* GraphQL */ `
+  query ListMeals(
+    $filter: ModelMealFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listMeals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        deadline
+        cost
+        plannedCount
+        actualCount
+        startTime
+        message
+        event {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        createdAt
+        updatedAt
+        mealEventId
+      }
+      nextToken
+    }
+  }
+`;
+export const getRegistration = /* GraphQL */ `
+  query GetRegistration($id: ID!) {
+    getRegistration(id: $id) {
+      id
+      event {
+        id
+        eventDate
+        eventCompKey
+        region {
+          id
+          code
+          createdAt
+          updatedAt
+          organizationRegionsId
+        }
+        registrations {
+          nextToken
+        }
+        coordinator {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        status
+        plannedCount
+        actualCount
+        startTime
+        endTime
+        message
+        name
+        graphic
+        location {
+          id
+          street
+          city
+          stateProv
+          postalCode
+          latitude
+          longitude
+          createdAt
+          updatedAt
+        }
+        contact {
+          id
+          firstName
+          lastName
+          email
+          phone
+          street
+          city
+          stateProv
+          postalCode
+          createdAt
+          updatedAt
+        }
+        meal {
+          id
+          deadline
+          cost
+          plannedCount
+          actualCount
+          startTime
+          message
+          createdAt
+          updatedAt
+          mealEventId
+        }
+        createdAt
+        updatedAt
+        regionEventsId
+        eventLocationEventsId
+        eventContactEventsId
+        userEventsId
+        eventMealId
+      }
+      registrar {
+        id
+        sub
+        username
+        firstName
+        lastName
+        registrations {
+          nextToken
+        }
+        events {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      eventRegistrationsId
+      userRegistrationsId
+    }
+  }
+`;
+export const listRegistrations = /* GraphQL */ `
+  query ListRegistrations(
+    $filter: ModelRegistrationFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listRegistrations(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        event {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        registrar {
+          id
+          sub
+          username
+          firstName
+          lastName
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+        eventRegistrationsId
+        userRegistrationsId
+      }
+      nextToken
     }
   }
 `;
@@ -434,50 +746,44 @@ export const getUser = /* GraphQL */ `
     getUser(id: $id) {
       id
       sub
+      username
       firstName
       lastName
-      username
-      email
-      phone
-      Affiliations {
+      registrations {
         items {
           id
-          role
-          status
-          userID
-          organizationsID
           createdAt
           updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+          eventRegistrationsId
+          userRegistrationsId
         }
         nextToken
-        startedAt
       }
-      Location {
-        id
-        street
-        city
-        stateProv
-        postalCode
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
+      events {
+        items {
+          id
+          eventDate
+          eventCompKey
+          status
+          plannedCount
+          actualCount
+          startTime
+          endTime
+          message
+          name
+          graphic
+          createdAt
+          updatedAt
+          regionEventsId
+          eventLocationEventsId
+          eventContactEventsId
+          userEventsId
+          eventMealId
+        }
+        nextToken
       }
-      birthday
-      shirt
-      picture
-      defaulltOrgID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      userLocationId
-      owner
     }
   }
 `;
@@ -491,119 +797,19 @@ export const listUsers = /* GraphQL */ `
       items {
         id
         sub
+        username
         firstName
         lastName
-        username
-        email
-        phone
-        Affiliations {
-          items {
-            id
-            role
-            status
-            userID
-            organizationsID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
+        registrations {
           nextToken
-          startedAt
         }
-        Location {
-          id
-          street
-          city
-          stateProv
-          postalCode
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
+        events {
+          nextToken
         }
-        birthday
-        shirt
-        picture
-        defaulltOrgID
         createdAt
         updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userLocationId
-        owner
       }
       nextToken
-      startedAt
-    }
-  }
-`;
-export const syncUsers = /* GraphQL */ `
-  query SyncUsers(
-    $filter: ModelUserFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncUsers(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        sub
-        firstName
-        lastName
-        username
-        email
-        phone
-        Affiliations {
-          items {
-            id
-            role
-            status
-            userID
-            organizationsID
-            createdAt
-            updatedAt
-            _version
-            _deleted
-            _lastChangedAt
-          }
-          nextToken
-          startedAt
-        }
-        Location {
-          id
-          street
-          city
-          stateProv
-          postalCode
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-        }
-        birthday
-        shirt
-        picture
-        defaulltOrgID
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        userLocationId
-        owner
-      }
-      nextToken
-      startedAt
     }
   }
 `;

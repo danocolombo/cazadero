@@ -1,10 +1,13 @@
 import { useState } from 'react';
-import { StyleSheet, TextInput, Image } from 'react-native';
+import { StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 export default function TabTwoScreen() {
+    const checkData = () => {
+        console.log('CHECK DATA');
+    };
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Tab Two</Text>
@@ -14,7 +17,9 @@ export default function TabTwoScreen() {
                 darkColor='rgba(255,255,255,0.1)'
             />
             <View>
-                <Text>Let's Enter a new User...</Text>
+                <TouchableOpacity onPress={() => checkData()}>
+                    <Text>Check Data</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
