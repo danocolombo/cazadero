@@ -29,19 +29,58 @@ import {
     RootTabScreenProps,
 } from '../../types';
 import LinkingConfiguration from './LinkingConfiguration';
-import { Auth } from 'aws-amplify';
+import { Auth, Hub } from 'aws-amplify';
 export default function Navigation({
     colorScheme,
 }: {
     colorScheme: ColorSchemeName;
 }) {
+    //   --------- Navigation !!!!! ----------------
+    const [isUserAuthenticated, setIsUserAuthenticated] = useState(undefined);
     const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
-    async function checkUser() {
-        const current = await Auth.currentAuthenticatedUser();
-        if (current?.attributes?.sub) {
-            setUserLoggedIn(true);
+    const checkUser = async () => {
+        try {
+            const authUser = await Auth.currentAuthenticatedUser({
+                bypassCache: true,
+            });
+            if (authUser?.attributes?.sub) {
+                setIsUserAuthenticated(authUser);
+            } else {
+                setIsUserAuthenticated(null);
+            }
+        } catch (e) {
+            setIsUserAuthenticated(null);
         }
-    }
+    };
+    useEffect(() => {
+        //getSystemVariables();  //     Need to get system variables??
+        checkUser();
+        const listener = (data) => {
+            if (data.payload.event === 'signIn') {
+                checkUser();
+            } else if (data.payload.event === 'signOut') {
+                Cache.clear();
+                clearUser();
+                printObject('NAV:64-->signOut() received', '');
+                setIsUserAuthenticated(false);
+            }
+        };
+        try {
+            Hub.listen('auth', listener);
+        } catch (error) {
+            printObject('NAV:71-->hub listener catch:\n', error);
+        }
+
+        //make suree to unsubscribe....
+        return () => Hub.remove('auth', listener);
+    }, []);
+
+    // async function checkUser() {
+    //     const current = await Auth.currentAuthenticatedUser();
+    //     if (current?.attributes?.sub) {
+    //         setUserLoggedIn(true);
+    //     }
+    // }
     useEffect(() => {
         const listener = (data) => {
             if (data.payload.event === 'signIn') {
@@ -55,7 +94,7 @@ export default function Navigation({
             linking={LinkingConfiguration}
             theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
         >
-            <RootNavigator />
+            <RootNavigator isUserAuthenticated />
         </NavigationContainer>
     );
 }
@@ -66,13 +105,13 @@ export default function Navigation({
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-function RootNavigator() {
+function RootNavigator({ isUserAuthenticated }) {
     return (
         <Stack.Navigator>
             <Stack.Screen
                 name='Root'
                 component={BottomTabNavigator}
-                options={{ headerShown: false }}
+                initialParams={{ isUserAuthenticated: isUserAuthenticated }}
             />
             <Stack.Screen
                 name='NotFound'
@@ -94,7 +133,7 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
     const colorScheme = useColorScheme();
-    const isAuthenticated = true;
+    const isAuthenticated = route.params.isUserAuthenticated;
 
     if (!isAuthenticated) {
         const isAuthenticated = false;

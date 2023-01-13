@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-
+import PateDivision from '../components/pate/basic-data/pate.division';
 export default function TabTwoScreen() {
     const checkData = () => {
         console.log('CHECK DATA');
@@ -21,6 +21,7 @@ export default function TabTwoScreen() {
                     <Text>Check Data</Text>
                 </TouchableOpacity>
             </View>
+            <PateDivision />
         </View>
     );
 }
